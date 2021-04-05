@@ -19,7 +19,35 @@ Finally, fetch your workspace id with the following curl command. Curl is a comm
 curl -s --header "Authorization: Bearer $TOKEN" --header "Content-Type: application/vnd.api+json"   https://app.terraform.io/api/v2/organizations/$ORG/workspaces/hashicat-gcp | jq -r .data.id
 ```
 
-(Use Terraform API)[https://www.terraform.io/docs/cloud/api/run.html]
+### Create Variables
+- https://www.terraform.io/docs/cloud/api/variables.html
+
+```
+curl \
+  --header "Authorization: Bearer $TOKEN" \
+  --header "Content-Type: application/vnd.api+json" \
+  --request POST \
+  --data @var-height.json \
+  https://app.terraform.io/api/v2/vars
+
+curl \
+  --header "Authorization: Bearer $TOKEN" \
+  --header "Content-Type: application/vnd.api+json" \
+  --request POST \
+  --data @var-placeholder.json \
+  https://app.terraform.io/api/v2/vars
+
+curl \
+  --header "Authorization: Bearer $TOKEN" \
+  --header "Content-Type: application/vnd.api+json" \
+  --request POST \
+  --data @var-width.json \
+  https://app.terraform.io/api/v2/vars
+```
+
+
+## Run (terraform plan/apply) 
+- https://www.terraform.io/docs/cloud/api/run.html
 
 ```
 curl \
