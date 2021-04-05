@@ -1,5 +1,6 @@
 # hashicat-gcp
 HashiCat: A Terraform built application for use in HashiCorp workshops
+- [Slides](https://hashicorp.github.io/field-workshops-terraform/slides/gcp/terraform-cloud/#1)
 
 Includes "Meow World" website.
 
